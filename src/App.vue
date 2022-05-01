@@ -1,4 +1,12 @@
-<script setup></script>
+<script>
+import Form from "./components/Form.vue";
+export default {
+  name: "App",
+  components: {
+    Form,
+  },
+};
+</script>
 
 <template>
   <header>
@@ -12,6 +20,7 @@
 
     <div class="wrapper">
       <h1>To Do List</h1>
+      <Form />
     </div>
   </header>
 
