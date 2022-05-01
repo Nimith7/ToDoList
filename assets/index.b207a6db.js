@@ -3719,7 +3719,7 @@ function Fl(e, t, n, s, r, o) {
   );
 }
 var Ml = qn(Cl, [["render", Fl]]),
-  Pl = "/assets/logo.0bfd8817.png";
+  Pl = "./assets/logo.0bfd8817.png";
 const kl = {
     name: "App",
     components: { Form: Tl, TaskList: Ml },
