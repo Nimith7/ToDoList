@@ -1,10 +1,12 @@
 <script>
 import { ref } from "@vue/reactivity";
 import Form from "./components/Form.vue";
+import TaskList from "./components/TaskList.vue";
 export default {
   name: "App",
   components: {
     Form,
+    TaskList,
   },
   setup() {
     let tasks = ref([]);
@@ -14,8 +16,14 @@ export default {
       tasks.value = [...tasks.value, { task: data, id: Date.now() }];
       console.log("App | saveTask() | tasks.value", tasks.value);
     };
+
+    const deleteTask = function (item) {
+      console.log("App | deleteTask() | item", item);
+      tasks.value = tasks.value.filter((t) => t.id !== item.id);
+    };
     return {
       saveTask,
+      deleteTask,
       tasks,
     };
   },
@@ -39,10 +47,7 @@ export default {
   </header>
 
   <main>
-    <ul>
-      <li v-for="item in tasks" :key="item.id">{{ item.task }}</li>
-    </ul>
-    {{ tasks.length }} tâche{{ tasks.length > 1 ? "s" : "" }}
+    <TaskList :tasks="tasks" @delete-task="deleteTask" />
   </main>
 </template>
 
