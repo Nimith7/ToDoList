@@ -3719,7 +3719,7 @@ function Fl(e, t, n, s, r, o) {
   );
 }
 var Ml = qn(Cl, [["render", Fl]]),
-  Pl = "./assets/logo.0bfd8817.png";
+  Pl = "logo.0bfd8817.png";
 const kl = {
     name: "App",
     components: { Form: Tl, TaskList: Ml },
@@ -3747,7 +3747,7 @@ const kl = {
     {
       alt: "ToDoList logo",
       class: "logo",
-      src: ".logo.0bfd8817.png",
+      src: Pl,
       width: "125",
       height: "125",
     },
