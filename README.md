@@ -1,5 +1,13 @@
 # ToDoList
 
+Mini Projet : Liste de tâches à réaliser
+
+- Formulaire pour ajouter une tâche
+- Un bouton pour supprimer une tâche
+- Un bouton pour modifier une tâche
+
+#
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
