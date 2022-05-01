@@ -17,6 +17,10 @@ export default {
       console.log("App | saveTask() | tasks.value", tasks.value);
     };
 
+    const editTask = function (item) {
+      tasks.value = tasks.value.map((t) => (t.id !== item.id ? t : item));
+    };
+
     const deleteTask = function (item) {
       console.log("App | deleteTask() | item", item);
       tasks.value = tasks.value.filter((t) => t.id !== item.id);
@@ -25,6 +29,7 @@ export default {
       saveTask,
       deleteTask,
       tasks,
+      editTask,
     };
   },
 };
@@ -47,7 +52,7 @@ export default {
   </header>
 
   <main>
-    <TaskList :tasks="tasks" @delete-task="deleteTask" />
+    <TaskList :tasks="tasks" @delete-task="deleteTask" @edit-task="editTask" />
   </main>
 </template>
 
