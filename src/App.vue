@@ -1,9 +1,23 @@
 <script>
+import { ref } from "@vue/reactivity";
 import Form from "./components/Form.vue";
 export default {
   name: "App",
   components: {
     Form,
+  },
+  setup() {
+    let tasks = ref([]);
+
+    const saveTask = function (data) {
+      console.log("App | saveTask() | data", data);
+      tasks.value = [...tasks.value, { task: data, id: Date.now() }];
+      console.log("App | saveTask() | tasks.value", tasks.value);
+    };
+    return {
+      saveTask,
+      tasks,
+    };
   },
 };
 </script>
@@ -20,11 +34,16 @@ export default {
 
     <div class="wrapper">
       <h1>To Do List</h1>
-      <Form />
+      <Form @add="saveTask" />
     </div>
   </header>
 
-  <main></main>
+  <main>
+    <ul>
+      <li v-for="item in tasks" :key="item.id">{{ item.task }}</li>
+    </ul>
+    {{ tasks.length }} tâche{{ tasks.length > 1 ? "s" : "" }}
+  </main>
 </template>
 
 <style>
@@ -47,17 +66,8 @@ header {
   margin: 0 auto 2rem;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+ul {
+  list-style-type: none;
 }
 
 @media (min-width: 1024px) {
