@@ -6,6 +6,8 @@ Mini Projet : Liste de tâches à réaliser
 - Un bouton pour supprimer une tâche
 - Un bouton pour modifier une tâche
 
+Lien de la demo : https://nimith7.github.io/ToDoList/
+
 #
 
 This template should help get you started developing with Vue 3 in Vite.
