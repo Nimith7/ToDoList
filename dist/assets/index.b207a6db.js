@@ -3747,7 +3747,7 @@ const kl = {
     {
       alt: "ToDoList logo",
       class: "logo",
-      src: Pl,
+      src: ".logo.0bfd8817.png",
       width: "125",
       height: "125",
     },
